@@ -1,0 +1,1 @@
+["^ ","~$can-cancel-order?",["^ ","~:row",3,"~:col",1,"~:fixed-arities",["~#set",[1]],"~:name","^0","~:ns","~$transportation-app.domain.order","~:top-ns","^7","~:arities",["^ ","~i1",["^ ","~:ret","~:boolean","~:arglist-str","[order]"]],"~:type","~:fn"],"~:filename","/Users/yasuki.okuyama/dev/transportation-app/src/transportation_app/domain/order.clj"]
