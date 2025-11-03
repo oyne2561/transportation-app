@@ -44,5 +44,13 @@
                  :desired-delivery-datetime #inst "2024-01-01T09:00:00Z"}]
       (is (match? {:valid false
                    :errors ["希望配達日時は現在時刻より未来である必要があります"]}
-                  (order/validate-order order #inst "2024-01-01T10:00:00Z"))))))
+                  (order/validate-order order #inst "2024-01-01T10:00:00Z")))))
+  (testing "荷物の重量が上限を超える場合はエラー"
+    (let [order {:from-address "東京都渋谷区..."
+                 :to-address "東京都新宿区..."
+                 :package {:weight 30.1 :size {:width 30 :height 20 :depth 15}}
+                 :desired-delivery-datetime #inst "2024-01-01T09:00:00Z"}]
+      (is (match? {:valid false
+                   :errors ["荷物の重量は30kg以下である必要があります"]}
+                  (order/validate-order order #inst "2024-01-01T08:00:00Z"))))))
 

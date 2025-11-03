@@ -31,16 +31,13 @@ You can configure this with the setting:
 
 
 ; Jacking in...
-; TypeError: Cannot read properties of undefined (reading 'label')
-; Aborting jack-in.
-; Jacking in...
 ; Connecting using "Leiningen" project type.
 ; You can make Calva auto-select this.
 ;   - See https://calva.io/connect-sequences/
 ; 
 
 ; Starting Jack-in: (cd /Users/yasuki.okuyama/dev/transportation-app; lein update-in :dependencies conj '[nrepl,"1.5.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.58.0"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:55481 ...
+; Using host:port 127.0.0.1:59216 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -51,280 +48,27 @@ about why stdout printed to this file is prepended with `;` to be line comments.
 clj꞉transportation-app.core꞉> 
 ; Jack-in done.
 clj꞉transportation-app.core꞉> 
-nil
-clj꞉transportation-app.domain.order-test꞉> 
-; Syntax error compiling at (test/transportation_app/domain/order_test.clj:10:20).
-; No such var: order/can-cancel-order?
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/can-cancel-order?
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order-test/can-cancel-order?-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; ERROR in transportation-app.domain.order-test/can-cancel-order?-test (Var.java:10):
-; Uncaught exception, not in assertion
-; error: java.lang.IllegalStateException: Attempting to call unbound fn: #'matcher-combinators.test/match? (Var.java:10)
-; 1 tests finished, problems found. 😭 errors: 1, failures: 0, ns: 1, vars: 1
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/can-cancel-order?-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; 1 tests finished, all passing 👍, ns: 1, vars: 1
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/can-cancel-order?-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; 1 tests finished, all passing 👍, ns: 1, vars: 1
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/can-cancel-order?-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; FAIL in transportation-app.domain.order-test/can-cancel-order?-test (order_test.clj:13):
-; 配達中の注文はキャンセル不可
-; expected:
-(false? (order/can-cancel-order? order))
-
-; actual:
-(not (false? true))
-
-; 2 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 1
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/can-cancel-order?-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; FAIL in transportation-app.domain.order-test/can-cancel-order?-test (order_test.clj:13):
-; 配達中の注文はキャンセル不可
-; expected:
-(false? (order/can-cancel-order? order))
-
-; actual:
-(not (false? true))
-
-; 2 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 1
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/can-cancel-order?
-clj꞉transportation-app.domain.order꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order
-;   transportation-app.domain.order-test
-
-; 2 tests finished, all passing 👍, ns: 1, vars: 1
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order-test/can-cancel-order?-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; FAIL in transportation-app.domain.order-test/can-cancel-order?-test (order_test.clj:13):
-; 配達業や割り当て済みの注文はキャンセル可能
-; expected:
-(true? (order/can-cancel-order? order))
-
-; actual:
-(not (true? false))
-
-; 3 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 1
-clj꞉transportation-app.domain.order-test꞉> 
-false
-clj꞉transportation-app.domain.order-test꞉> 
-true
-clj꞉transportation-app.domain.order-test꞉> 
-false
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/can-cancel-order?
-clj꞉transportation-app.domain.order꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order
-;   transportation-app.domain.order-test
-
-; 3 tests finished, all passing 👍, ns: 1, vars: 1
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order-test/can-cancel-order?-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; 5 tests finished, all passing 👍, ns: 1, vars: 1
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/can-cancel-order?-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; 5 tests finished, all passing 👍, ns: 1, vars: 1
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/can-cancel-order?-test
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
 #'transportation-app.domain.order-test/validate-order-test
 clj꞉transportation-app.domain.order-test꞉> 
 ; Running tests for the following namespaces:
 ;   transportation-app.domain.order-test
 ;   transportation-app.domain.order
 
-; 6 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order-test/validate-order-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; FAIL in transportation-app.domain.order-test/validate-order-test (order_test.clj:30):
-; 正常ね注文はバリデーション成功
-; expected:
-(match? {:valid true} (order/validate-order order))
-
-; actual:
-{:valid (mismatch (expected true) (actual false))}
-
-; 6 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 2
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; 6 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order
-;   transportation-app.domain.order-test
-
-; #atom[[]]
-; 6 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order
-;   transportation-app.domain.order-test
-
-; []
-; 6 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order-test/validate-order-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; []
-; [配送元と配送先が同じ住所です]
-; 7 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
-; Syntax error compiling at (test/transportation_app/domain/order_test.clj:47:19).
-; Unable to resolve symbol: inst in this context
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/validate-order-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; 7 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/validate-order-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; ERROR in transportation-app.domain.order-test/validate-order-test (AFn.java:31):
-; 正常な注文はバリデーション成功
-; error: clojure.lang.ArityException: Wrong number of args (2) passed to: transportation-app.domain.order/validate-order (AFn.java:31)
+; FAIL in transportation-app.domain.order-test/validate-order-test (order_test.clj:53):
+; 荷物の重量が上限を超える場合はエラー
 ; expected:
 (match?
- {:valid true}
- (order/validate-order order #inst "2024-01-01T10:00:00.000-00:00"))
-
-; ERROR in transportation-app.domain.order-test/validate-order-test (AFn.java:39):
-; 配送元と配送先が同じ場合はエラー
-; error: clojure.lang.ArityException: Wrong number of args (2) passed to: transportation-app.domain.order/validate-order (AFn.java:39)
-; expected:
-(match?
- {:errors ["配送元と配送先が同じ住所です"], :valid false}
- (order/validate-order order #inst "2024-01-01T10:00:00.000-00:00"))
-
-; 7 tests finished, problems found. 😭 errors: 2, failures: 0, ns: 1, vars: 2
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order-test/validate-order-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; 7 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/validate-order-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; FAIL in transportation-app.domain.order-test/validate-order-test (order_test.clj:45):
-; 希望配達日時が過去の場合はエラー
-; expected:
-(match?
- {:errors ["希望配達日時は現在時刻より未来である必要があります"], :valid false}
- (order/validate-order order #inst "2024-01-01T10:00:00.000-00:00"))
+ {:errors ["荷物の重量は30kg以下である必要があります"], :valid false}
+ (order/validate-order order #inst "2024-01-01T08:00:00.000-00:00"))
 
 ; actual:
-{:errors
- [(mismatch
-   (expected 希望配達日時は現在時刻より未来である必要があります)
-   (actual 配送元と配送先が同じ住所です))],
- :valid false}
-
-; 8 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 2
-clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order-test/validate-order-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; FAIL in transportation-app.domain.order-test/validate-order-test (order_test.clj:45):
-; 希望配達日時が過去の場合はエラー
-; expected:
-(match?
- {:errors ["希望配達日時は現在時刻より未来である必要があります"], :valid false}
- (order/validate-order order #inst "2024-01-01T10:00:00.000-00:00"))
-
-; actual:
-{:errors (missing [希望配達日時は現在時刻より未来である必要があります]),
+{:errors (missing [荷物の重量は30kg以下である必要があります]),
  :valid (mismatch (expected false) (actual true))}
 
-; 8 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 2
+; 9 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 2
 clj꞉transportation-app.domain.order-test꞉> 
+#'transportation-app.domain.order/validate-order
+clj꞉transportation-app.domain.order꞉> 
 #'transportation-app.domain.order/validate-order
 clj꞉transportation-app.domain.order꞉> 
 ; Running tests for the following namespaces:
@@ -333,7 +77,7 @@ clj꞉transportation-app.domain.order꞉> 
 
 ; ERROR in transportation-app.domain.order-test/validate-order-test (Numbers.java:31):
 ; 正常な注文はバリデーション成功
-; error: java.lang.ClassCastException: class java.util.Date cannot be cast to class java.lang.Number (java.util.Date and java.lang.Number are in module java.base of loader 'bootstrap') (Numbers.java:31)
+; error: java.lang.NullPointerException: Cannot invoke "java.lang.Number.doubleValue()" because "x" is null (Numbers.java:31)
 ; expected:
 (match?
  {:valid true}
@@ -341,7 +85,7 @@ clj꞉transportation-app.domain.order꞉> 
 
 ; ERROR in transportation-app.domain.order-test/validate-order-test (Numbers.java:39):
 ; 配送元と配送先が同じ場合はエラー
-; error: java.lang.ClassCastException: class java.util.Date cannot be cast to class java.lang.Number (java.util.Date and java.lang.Number are in module java.base of loader 'bootstrap') (Numbers.java:39)
+; error: java.lang.NullPointerException: Cannot invoke "java.lang.Number.doubleValue()" because "x" is null (Numbers.java:39)
 ; expected:
 (match?
  {:errors ["配送元と配送先が同じ住所です"], :valid false}
@@ -349,17 +93,21 @@ clj꞉transportation-app.domain.order꞉> 
 
 ; ERROR in transportation-app.domain.order-test/validate-order-test (Numbers.java:47):
 ; 希望配達日時が過去の場合はエラー
-; error: java.lang.ClassCastException: class java.util.Date cannot be cast to class java.lang.Number (java.util.Date and java.lang.Number are in module java.base of loader 'bootstrap') (Numbers.java:47)
+; error: java.lang.NullPointerException: Cannot invoke "java.lang.Number.doubleValue()" because "x" is null (Numbers.java:47)
 ; expected:
 (match?
  {:errors ["希望配達日時は現在時刻より未来である必要があります"], :valid false}
  (order/validate-order order #inst "2024-01-01T10:00:00.000-00:00"))
 
-; 8 tests finished, problems found. 😭 errors: 3, failures: 0, ns: 1, vars: 2
-clj꞉transportation-app.domain.order꞉> 
-true
-clj꞉transportation-app.domain.order꞉> 
-false
+; ERROR in transportation-app.domain.order-test/validate-order-test (Numbers.java:55):
+; 荷物の重量が上限を超える場合はエラー
+; error: java.lang.NullPointerException: Cannot invoke "java.lang.Number.doubleValue()" because "x" is null (Numbers.java:55)
+; expected:
+(match?
+ {:errors ["荷物の重量は30kg以下である必要があります"], :valid false}
+ (order/validate-order order #inst "2024-01-01T08:00:00.000-00:00"))
+
+; 9 tests finished, problems found. 😭 errors: 4, failures: 0, ns: 1, vars: 2
 clj꞉transportation-app.domain.order꞉> 
 #'transportation-app.domain.order/validate-order
 clj꞉transportation-app.domain.order꞉> 
@@ -367,15 +115,5 @@ clj꞉transportation-app.domain.order꞉> 
 ;   transportation-app.domain.order
 ;   transportation-app.domain.order-test
 
-; 8 tests finished, all passing 👍, ns: 1, vars: 2
+; 9 tests finished, all passing 👍, ns: 1, vars: 2
 clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order-test/validate-order-test
-clj꞉transportation-app.domain.order-test꞉> 
-; Running tests for the following namespaces:
-;   transportation-app.domain.order-test
-;   transportation-app.domain.order
-
-; 8 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉transportation-app.domain.order-test꞉> 
