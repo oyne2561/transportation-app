@@ -15,3 +15,14 @@
     (if (empty? errors)
       {:valid? true}
       {:valid? false :errors errors})))
+
+(defn create-order [customer-id from-address to-address package desired-datetime order-datetime]
+  {:order-id (str "ORD-" (System/currentTimeMillis))
+   :customer-id customer-id
+   :order-datetime order-datetime
+   :from-address from-address
+   :to-address to-address
+   :package package
+   :status :注文受付
+   :desired-delivery-datetime desired-datetime})
+

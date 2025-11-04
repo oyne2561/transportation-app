@@ -37,7 +37,7 @@ You can configure this with the setting:
 ; 
 
 ; Starting Jack-in: (cd /Users/yasuki.okuyama/dev/transportation-app; lein update-in :dependencies conj '[nrepl,"1.5.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.58.0"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:59216 ...
+; Using host:port 127.0.0.1:61414 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -48,72 +48,37 @@ about why stdout printed to this file is prepended with `;` to be line comments.
 clj꞉transportation-app.core꞉> 
 ; Jack-in done.
 clj꞉transportation-app.core꞉> 
-#'transportation-app.domain.order-test/validate-order-test
+#'transportation-app.domain.order/create-order
+clj꞉transportation-app.domain.order꞉> 
+#'transportation-app.domain.order-test/create-order-test
 clj꞉transportation-app.domain.order-test꞉> 
 ; Running tests for the following namespaces:
 ;   transportation-app.domain.order-test
 ;   transportation-app.domain.order
 
-; FAIL in transportation-app.domain.order-test/validate-order-test (order_test.clj:53):
-; 荷物の重量が上限を超える場合はエラー
+; FAIL in transportation-app.domain.order-test/create-order-test (order_test.clj:79):
+; 注文を作成する
 ; expected:
-(match?
- {:errors ["荷物の重量は30kg以下である必要があります"], :valid false}
- (order/validate-order order #inst "2024-01-01T08:00:00.000-00:00"))
+(some? (:order order))
 
 ; actual:
-{:errors (missing [荷物の重量は30kg以下である必要があります]),
- :valid (mismatch (expected false) (actual true))}
+(not (some? nil))
 
-; 9 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 2
+; 17 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 3
 clj꞉transportation-app.domain.order-test꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
+#'transportation-app.domain.order-test/create-order-test
+clj꞉transportation-app.domain.order-test꞉> 
 ; Running tests for the following namespaces:
-;   transportation-app.domain.order
 ;   transportation-app.domain.order-test
+;   transportation-app.domain.order
 
-; ERROR in transportation-app.domain.order-test/validate-order-test (Numbers.java:31):
-; 正常な注文はバリデーション成功
-; error: java.lang.NullPointerException: Cannot invoke "java.lang.Number.doubleValue()" because "x" is null (Numbers.java:31)
-; expected:
-(match?
- {:valid true}
- (order/validate-order order #inst "2024-01-01T10:00:00.000-00:00"))
-
-; ERROR in transportation-app.domain.order-test/validate-order-test (Numbers.java:39):
-; 配送元と配送先が同じ場合はエラー
-; error: java.lang.NullPointerException: Cannot invoke "java.lang.Number.doubleValue()" because "x" is null (Numbers.java:39)
-; expected:
-(match?
- {:errors ["配送元と配送先が同じ住所です"], :valid false}
- (order/validate-order order #inst "2024-01-01T10:00:00.000-00:00"))
-
-; ERROR in transportation-app.domain.order-test/validate-order-test (Numbers.java:47):
-; 希望配達日時が過去の場合はエラー
-; error: java.lang.NullPointerException: Cannot invoke "java.lang.Number.doubleValue()" because "x" is null (Numbers.java:47)
-; expected:
-(match?
- {:errors ["希望配達日時は現在時刻より未来である必要があります"], :valid false}
- (order/validate-order order #inst "2024-01-01T10:00:00.000-00:00"))
-
-; ERROR in transportation-app.domain.order-test/validate-order-test (Numbers.java:55):
-; 荷物の重量が上限を超える場合はエラー
-; error: java.lang.NullPointerException: Cannot invoke "java.lang.Number.doubleValue()" because "x" is null (Numbers.java:55)
-; expected:
-(match?
- {:errors ["荷物の重量は30kg以下である必要があります"], :valid false}
- (order/validate-order order #inst "2024-01-01T08:00:00.000-00:00"))
-
-; 9 tests finished, problems found. 😭 errors: 4, failures: 0, ns: 1, vars: 2
-clj꞉transportation-app.domain.order꞉> 
-#'transportation-app.domain.order/validate-order
-clj꞉transportation-app.domain.order꞉> 
+; 17 tests finished, all passing 👍, ns: 1, vars: 3
+clj꞉transportation-app.domain.order-test꞉> 
+#'transportation-app.domain.order-test/create-order-test
+clj꞉transportation-app.domain.order-test꞉> 
 ; Running tests for the following namespaces:
-;   transportation-app.domain.order
 ;   transportation-app.domain.order-test
+;   transportation-app.domain.order
 
-; 9 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉transportation-app.domain.order꞉> 
+; 17 tests finished, all passing 👍, ns: 1, vars: 3
+clj꞉transportation-app.domain.order-test꞉> 

@@ -61,3 +61,25 @@
       (is (match? {:valid? false
                    :errors [string? string? string?]}
                   (order/validate-order order #inst "2024-01-01T10:00:00Z"))))))
+
+(deftest create-order-test
+  (testing "注文を作成する"
+    (let [customer-id "CUST-001"
+          from-address "東京都渋谷区..."
+          to-address "東京都新宿区..."
+          package {:weight 5.0 :size {:width 30 :height 20 :depth 15} :description "書籍"}
+          desired-datetime #inst "2024-01-02T14:00:00Z"
+          order-datetime #inst "2024-01-01T10:00:00Z"
+          order (order/create-order customer-id
+                                    from-address
+                                    to-address
+                                    package
+                                    desired-datetime
+                                    order-datetime)]
+      (is (some? (:order-id order)))
+      (is (= customer-id (:customer-id order)))
+      (is (= from-address (:from-address order)))
+      (is (= to-address (:to-address order)))
+      (is (= package (:package order)))
+      (is (= :注文受付 (:status order)))
+      (is (= desired-datetime (:desired-delivery-datetime order))))))
